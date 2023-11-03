@@ -130,8 +130,9 @@ Now that our server is setup, we need to connect to it remotely using SSH. Remem
 
 We should now be in! You will be able to interact with the terminal of your Linux machine running on the cloud now.
 
-### ⚠️ In case you encounter an error regarding “UNPROTECTED PRIVATE KEY FILE” when trying to SSH.
-
+<details>
+  <summary> ⚠️ In case you encounter an error regarding “UNPROTECTED PRIVATE KEY FILE” when trying to SSH. </summary>
+  
 This can happen because your key file has incorrect permissions that prevent SSH from working. This is easily solved by executing: 
 
 *(replace “my-kp.pem” with your key pair file name)*
@@ -157,6 +158,7 @@ icacls.exe "my-kp.pem" /reset
 icacls.exe "gcart.pem" /grant "%USERNAME%:R"
 icacls.exe "my-kp.pem" /inheritance:r
 ```
+</details>
 
 ---
 
@@ -169,6 +171,7 @@ curl -s https://deb.nodesource.com/setup_18.x | sudo bash
 ```
 
 <aside>
+	
 💡 In Linux, **PPA (Personal Package Archive)** sources are external software repositories, often used in Ubuntu and its derivatives like Linux Mint, which allow users to access additional software packages not found in the official distribution's repositories. These PPAs are typically maintained by individuals or communities, offering users the advantage of obtaining newer software versions or custom packages with ease.
 
 </aside>
@@ -263,6 +266,7 @@ sudo nano .env
 Copy and paste or write your sensitive environment variables there.
 
 <aside>
+
 ℹ️ If you have a `NODE_ENV` in your `.env`. Make sure to set its value to `production`
 
 </aside>
@@ -285,6 +289,7 @@ Great, but we are not done yet. If you have noticed, running `npm start` takes o
 We want to be able to run the Node.js application as a background process, so that we can interact with our server and change things even when Node.js is running. For this, we can use a tool called **pm2.**
 
 <aside>
+	
 📖 **PM2** (or Process Manager 2) for managing and monitoring Node.js applications in a production environment. You can start, stop, restart, and delete applications with simple commands. One of the most important features of PM2 is its ability to automatically restart your Node.js application if it crashes or encounters an error. This ensures that your application stays online even if there are occasional issues.
 
 </aside>
@@ -327,6 +332,7 @@ To interact with our Node process, we can use the following pm2 commands:
 We now need to setup NGINX to be a reverse proxy, redirecting incoming HTTP requests to our Node.js application.
 
 <aside>
+	
 💡 A **reverse proxy** serves as an intermediary server that receives client requests and forwards them to one or more backend servers, such as Node.js applications, on behalf of the client. It operates by accepting incoming HTTP requests, optionally performing load balancing or caching, and then routing the requests to the appropriate backend server based on predefined rules.
 
 </aside>
@@ -401,6 +407,7 @@ NGINX should now properly act as a reverse proxy, forwarding requests to your No
 To secure your app with HTTPS, it's important to obtain an SSL certificate. 
 
 <aside>
+	
 💡 An **SSL certificate**, short for Secure Sockets Layer certificate serves as a digital passport for websites, encrypting data transmitted between a user's web browser and the server. It ensures that sensitive information such as login credentials and financial data remains confidential and protected from potential eavesdropping by malicious parties. SSL certificates establish trust and authenticity, verifying that a website is indeed what it claims to be, safeguarding against phishing attacks. They are a fundamental element in enabling HTTPS, the secure and encrypted browsing experience that has become the standard for online safety, reassuring users that their interactions with a website are secure and private.
 
 </aside>
@@ -430,4 +437,4 @@ In a short while, you should see a 🔒 padlock next to your website URL in brow
 
 Congratulations! Your Node.js app is now up and running on an AWS EC2 instance, ready to serve users. This setup provides a flexible environment for your web application, allowing you to handle increased traffic and maintain high availability.
 
-**~ *[Alan Varghese](https://github.com/waterrmalann)***
+**~ *[Alan Varghese](https://alanvarghese.me)***
