@@ -155,7 +155,7 @@ icacls.exe "my-kp.pem" /inheritance:r
 
 ```powershell
 icacls.exe "my-kp.pem" /reset
-icacls.exe "gcart.pem" /grant "%USERNAME%:R"
+icacls.exe "my-kp.pem" /grant "%USERNAME%:R"
 icacls.exe "my-kp.pem" /inheritance:r
 ```
 </details>
@@ -172,7 +172,7 @@ curl -s https://deb.nodesource.com/setup_18.x | sudo bash
 
 <aside>
 	
-💡 In Linux, **PPA (Personal Package Archive)** sources are external software repositories, often used in Ubuntu and its derivatives like Linux Mint, which allow users to access additional software packages not found in the official distribution's repositories. These PPAs are typically maintained by individuals or communities, offering users the advantage of obtaining newer software versions or custom packages with ease.
+> 💡 In Linux, **PPA (Personal Package Archive)** sources are external software repositories, often used in Ubuntu and its derivatives like Linux Mint, which allow users to access additional software packages not found in the official distribution's repositories. These PPAs are typically maintained by individuals or communities, offering users the advantage of obtaining newer software versions or custom packages with ease.
 
 </aside>
 
@@ -267,12 +267,11 @@ Copy and paste or write your sensitive environment variables there.
 
 <aside>
 
-ℹ️ If you have a `NODE_ENV` in your `.env`. Make sure to set its value to `production`
+> ℹ️ If you have a `NODE_ENV` in your `.env`. Make sure to set its value to `production`
 
 </aside>
 
 > You can save and close the file by pressing `CTRL+X` then `Y` then press `Enter`.
-> 
 
 **Our application should be all set to run!**
 
@@ -282,7 +281,7 @@ To test that everything works properly, run the command that starts your applica
 npm start
 ```
 
-Navigate to the IP address shown in your EC2 console with your port number appended at the end. Eg: `**http://**192.168.123.132**:3000**` and you should be able to see your project live! If you encounter any problems during this stage, go back and make sure you did the previous steps properly, otherwise it would most definitely be something wrong with your codebase, dependencies, incompatibility with the Linux environment, or inability to load in environment variables.
+Navigate to the IP address shown in your EC2 console with your port number appended at the end. Eg: **`http://192.168.123.132:3000`** and you should be able to see your project live! If you encounter any problems during this stage, go back and make sure you did the previous steps properly, otherwise it would most definitely be something wrong with your codebase, dependencies, incompatibility with the Linux environment, or inability to load in environment variables.
 
 Great, but we are not done yet. If you have noticed, running `npm start` takes over our whole terminal that we are using to access our EC2 instance, preventing us from doing anything else without stopping the server. 
 
@@ -290,7 +289,7 @@ We want to be able to run the Node.js application as a background process, so th
 
 <aside>
 	
-📖 **PM2** (or Process Manager 2) for managing and monitoring Node.js applications in a production environment. You can start, stop, restart, and delete applications with simple commands. One of the most important features of PM2 is its ability to automatically restart your Node.js application if it crashes or encounters an error. This ensures that your application stays online even if there are occasional issues.
+> 📖 **PM2** (or Process Manager 2) for managing and monitoring Node.js applications in a production environment. You can start, stop, restart, and delete applications with simple commands. One of the most important features of PM2 is its ability to automatically restart your Node.js application if it crashes or encounters an error. This ensures that your application stays online even if there are occasional issues.
 
 </aside>
 
@@ -333,7 +332,7 @@ We now need to setup NGINX to be a reverse proxy, redirecting incoming HTTP requ
 
 <aside>
 	
-💡 A **reverse proxy** serves as an intermediary server that receives client requests and forwards them to one or more backend servers, such as Node.js applications, on behalf of the client. It operates by accepting incoming HTTP requests, optionally performing load balancing or caching, and then routing the requests to the appropriate backend server based on predefined rules.
+> 💡 A **reverse proxy** serves as an intermediary server that receives client requests and forwards them to one or more backend servers, such as Node.js applications, on behalf of the client. It operates by accepting incoming HTTP requests, optionally performing load balancing or caching, and then routing the requests to the appropriate backend server based on predefined rules.
 
 </aside>
 
@@ -359,11 +358,11 @@ server_name yourdomain.com www.yourdomain.com;
 
 location / {
 	proxy_pass http://localhost:3000;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
+	proxy_http_version 1.1;
+	proxy_set_header Upgrade $http_upgrade;
+	proxy_set_header Connection 'upgrade';
+	proxy_set_header Host $host;
+	proxy_cache_bypass $http_upgrade;
 }
 ```
 
@@ -373,7 +372,7 @@ It should look like so:
 
 Use `CTRL + X`, `Y`, and `Enter` to exit the editor.
 
-- **Expand** in case you want a line-by-line explanation on what we just changed.
+- A line-by-line explanation on what we just changed.
     1. `server_name yourdomain.com www.yourdomain.com;`:
         - This line specifies the server names or domain names that this configuration applies to. Replace "[yourdomain.com](http://yourdomain.com/)" with your actual domain name. It means that when requests come in for "[yourdomain.com](http://yourdomain.com/)" or "[www.yourdomain.com](http://www.yourdomain.com/)," this configuration will be used.
     2. `location / {`:
@@ -408,7 +407,7 @@ To secure your app with HTTPS, it's important to obtain an SSL certificate.
 
 <aside>
 	
-💡 An **SSL certificate**, short for Secure Sockets Layer certificate serves as a digital passport for websites, encrypting data transmitted between a user's web browser and the server. It ensures that sensitive information such as login credentials and financial data remains confidential and protected from potential eavesdropping by malicious parties. SSL certificates establish trust and authenticity, verifying that a website is indeed what it claims to be, safeguarding against phishing attacks. They are a fundamental element in enabling HTTPS, the secure and encrypted browsing experience that has become the standard for online safety, reassuring users that their interactions with a website are secure and private.
+> 💡 An **SSL certificate**, short for Secure Sockets Layer certificate serves as a digital passport for websites, encrypting data transmitted between a user's web browser and the server. It ensures that sensitive information such as login credentials and financial data remains confidential and protected from potential eavesdropping by malicious parties. SSL certificates establish trust and authenticity, verifying that a website is indeed what it claims to be, safeguarding against phishing attacks. They are a fundamental element in enabling HTTPS, the secure and encrypted browsing experience that has become the standard for online safety, reassuring users that their interactions with a website are secure and private.
 
 </aside>
 
@@ -428,7 +427,7 @@ sudo apt-get install python3-certbot-nginx
 **After installation, request a certificate for your domain (replace placeholders).**
 
 ```bash
- sudo certbot --nginx -d **yourdomain.com** -d **www.yourdomain.com**
+ sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 ```
 
 In a short while, you should see a 🔒 padlock next to your website URL in browser, signifying that the site has HTTPs enabled and is secure.
@@ -437,4 +436,4 @@ In a short while, you should see a 🔒 padlock next to your website URL in brow
 
 Congratulations! Your Node.js app is now up and running on an AWS EC2 instance, ready to serve users. This setup provides a flexible environment for your web application, allowing you to handle increased traffic and maintain high availability.
 
-**~ *[Alan Varghese](https://alanvarghese.me)***
+~ [***Alan Varghese***](https://alanvarghese.me)
