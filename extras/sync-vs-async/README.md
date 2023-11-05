@@ -73,6 +73,7 @@ Picture a busy restaurant kitchen with just one chef. The chef can only cook one
 
 <aside>
 
+> [!NOTE]
 > 💡 **Concurrency is** like juggling multiple tasks at once. Imagine you're a chef in a busy restaurant kitchen. You're not waiting for one dish to finish cooking before you start another; instead, you're managing multiple dishes simultaneously.
 
 </aside>
@@ -81,6 +82,7 @@ Picture the same busy restaurant kitchen, but instead of just one chef who can o
 
 <aside>
 
+> [!NOTE]
 > 💡 **Parallelism is** like having multiple people to handle multiple tasks. It is different from concurrency, just like how a team of builders can finish a house much quicker than a single worker.
 
 </aside>

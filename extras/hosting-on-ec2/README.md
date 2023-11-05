@@ -130,8 +130,9 @@ Now that our server is setup, we need to connect to it remotely using SSH. Remem
 
 We should now be in! You will be able to interact with the terminal of your Linux machine running on the cloud now.
 
+
 <details>
-  <summary> ⚠️ In case you encounter an error regarding “UNPROTECTED PRIVATE KEY FILE” when trying to SSH. </summary>
+<summary> ⚠️ In case you encounter an error regarding “UNPROTECTED PRIVATE KEY FILE” when trying to SSH. </summary>
   
 This can happen because your key file has incorrect permissions that prevent SSH from working. This is easily solved by executing: 
 
@@ -267,11 +268,12 @@ Copy and paste or write your sensitive environment variables there.
 
 <aside>
 
-> ℹ️ If you have a `NODE_ENV` in your `.env`. Make sure to set its value to `production`
+> [!NOTE] 
+> If you have a `NODE_ENV` in your `.env`. Make sure to set its value to `production`
 
 </aside>
 
-> You can save and close the file by pressing `CTRL+X` then `Y` then press `Enter`.
+You can save and close the file by pressing `CTRL+X` then `Y` then press `Enter`.
 
 **Our application should be all set to run!**
 
@@ -307,15 +309,13 @@ pm2 start **app.js** --name=**"My App Name"**
 
 Assuming that the entry file is named `app.js`, this little command should start the server. The `--title` flag is used to provide a neat little, easily identifiable name for our process so that it is easy to manage later on.
 
-- **In case you’re encountering issues with `.env` file.**
-    
-    You can additionally pass in a `--env` flag to set the path for the `.env` file manually. So the modified command would look something like this:
-    
-    ```bash
-    pm2 start app.js --name="My App Name" --env=.env
-    ```
-    
-    Where `.env` could be replaced by the path or alternatively you could run the command from the folder that contains the `.env` file and specify a relative path for the `app.js` like `server/app.js`
+> [!IMPORTANT] 
+> **In case you’re encountering issues with `.env` file.**
+> You can additionally pass in a `--env` flag to set the path for the `.env` file manually. So the modified command would look something like this:
+> ```bash
+>	pm2 start app.js --name="My App Name" --env=.env
+> ``` 
+> Where `.env` could be replaced by the path or alternatively you could run the command from the folder that contains the `.env` file and specify a relative path for the `app.js` like `server/app.js`
     
 
 To interact with our Node process, we can use the following pm2 commands:
