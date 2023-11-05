@@ -96,4 +96,4 @@ In summary, synchronous programming in a single-threaded environment leads to se
 
 ---
 
-**~ *[Alan Varghese](https://github.com/waterrmalann)***
+~ [***Alan Varghese***](https://alanvarghese.me)
