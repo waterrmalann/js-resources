@@ -1,0 +1,77 @@
+Advantages of JavaScript
+Datatypes
+var vs let vs const
+Dynamic typing
+Type Coercion
+== vs ===
+OOPs Concepts
+Classes, Constructors
+Class Constructors vs Function Constructors
+Prototypes
+Prototype Chaining
+Prototype Pollution
+Polyfill
+this keyword
+ES6 features
+Object methods
+Array methods
+Math methods
+JSON methods
+call, apply, and bind
+"use strict"
+spread vs rest operators
+Shallow Copy, Deep Copy
+structuredClone
+indexOf, typeOf, instanceof
+Pure functions, Side Effects
+Higher Order Functions
+First Class Functions
+Function Composition
+Callback Functions
+Callback Hell
+Synchronous vs Asynchronous
+Single Threaded vs Multi Threaded
+Promises vs Async/Await
+Promise methods
+Event Loop
+Callstack
+Callback Queue vs Microtask Queue
+IIFE
+Scope
+Lexical Environment
+Closure
+Hoisting
+Temporal Dead Zone
+Undefined vs Not Defined
+Optional Chaining
+Scope Chaining
+Map vs Set
+WeakMap vs WeakSet
+map, filter, reduce
+Object shorthand
+Regular functions vs Arrow functions
+BOM vs DOM
+DOM Access & Manipulation
+defer, async
+Currying
+Generators
+Event Propogation (Bubbling, Capturing)
+Event Delegation
+Event Handler vs Event Listener
+setTimeout, setInterval
+cancelTimeout, cancelInterval
+window object
+jQuery
+Styling console logs
+Custom event
+Event Emitter
+Variable Shadowing
+Date vs Timestamp
+Set vs Map
+Proxy Object
+Proxy Traps
+Promise.all vs Promise.allSettled
+Treeshaking (Deadcode Elimination)
+Bundling & Minification
+Null Pointer Exception
+Array.flat vs Array.flatMap
